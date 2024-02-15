@@ -1,1 +1,12 @@
 data/
+*/__pycache__/
+*.pyc
+*.pt
+ThirdParty/
+
+# fair seq
+vocab.bpe
+bart.large.cnn/
+output/
+dict.txt
+encoder.json

@@ -43,6 +43,7 @@ if __name__ == '__main__':
     # Load dataset using dataset loader
     dataset_loader = get_dataloader(args.dataset.loader_name)(args)
     source_data, target_data = dataset_loader.load()
+    # print(source_data, target_data)
     assertion_statis(source_data, target_data, f"Finish loading stage {args.cur_stage} dataset!")
     if args.train.save_intermediate is True:
         dataset_loader.save()
@@ -66,8 +67,8 @@ if __name__ == '__main__':
         target_segmentor.save()
 
         assertion_statis(split_source, target, f"Finish loading stage {args.cur_stage} dataset!")
-
-        if args.mode == "train":
+        
+        if args.train.mode == "train":
             # Use collected data to run model training
             data_folder = os.path.join(args.train.output_path, f"stage_{args.cur_stage}")
             trainer_output_folder = os.path.join(data_folder, "trainer_output")
@@ -96,6 +97,8 @@ if __name__ == '__main__':
         hypo = combiner.combine()
         combiner.save()
 
+    print(f"Finish loading stage {args.cur_stage} dataset!")
+    
     # # Fine-grained Stage
     source_path = os.path.join(args.train.output_path, f"stage_{args.cur_stage}")
     cur_source = load_split_aslist(source_path, suffix='hypo')

@@ -13,9 +13,10 @@ BART_PATH=./bart.large.cnn/model.pt
 RUN_NAME=AMI
 
 python run.py --cfg AMI.cfg \
- --dataset-path /data/yfz5488/fair/AMI/AMI_proprec \
+ --dataset-path data/AMI_proprec/ \
  --output-path ./output/${RUN_NAME} \
  --save-intermediate \
  --cuda-devices 2,3 \
- --model-path $BART_PATH
+ --model-path $BART_PATH \
+ --mode train \
 

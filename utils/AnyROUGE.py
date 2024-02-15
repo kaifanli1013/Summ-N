@@ -1,5 +1,6 @@
 import os
 from ThirdParty.ROUGE import pyrouge
+import pyrouge
 from nltk import sent_tokenize
 import shutil
 
