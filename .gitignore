@@ -10,3 +10,4 @@ bart.large.cnn/
 output/
 dict.txt
 encoder.json
+examples/
