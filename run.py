@@ -43,7 +43,10 @@ if __name__ == '__main__':
     # Load dataset using dataset loader
     dataset_loader = get_dataloader(args.dataset.loader_name)(args)
     source_data, target_data = dataset_loader.load()
+    
     # print(source_data, target_data)
+    # raise NotImplementedError
+    
     assertion_statis(source_data, target_data, f"Finish loading stage {args.cur_stage} dataset!")
     if args.train.save_intermediate is True:
         dataset_loader.save()
@@ -109,7 +112,7 @@ if __name__ == '__main__':
     write_finegrained_dataset(cur_source, cur_target, data_folder)
     assertion_statis(cur_source, cur_target, f"Finish loading stage {args.cur_stage} dataset!")
 
-    if args.mode == "train":
+    if args.train.mode == "train":
         trainer_output_folder = os.path.join(data_folder, "trainer_output")
         os.system(f"bash models/train_summarizor.sh {data_folder} {trainer_output_folder} {args.train.cuda_devices}")
 

@@ -35,8 +35,8 @@ class SummaryGenerator(object):
                 continue
 
             # change the maximum input tokens per batch
-            self.bart.cfg.dataset.batch_size_valid = bsz
-            self.bart.cfg.dataset.max_tokens_valid = bsz * 1024
+            self.cfg.dataset.batch_size_valid = bsz
+            self.cfg.dataset.max_tokens_valid = bsz * 1024
 
             count = 1
             slines = [self.data[data_type][0]]
