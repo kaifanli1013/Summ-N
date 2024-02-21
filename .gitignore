@@ -11,3 +11,4 @@ output/
 dict.txt
 encoder.json
 examples/
+checkpoints/

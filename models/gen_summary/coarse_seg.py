@@ -30,7 +30,7 @@ class CoarseSegCombiner(object):
             # self.target = origin_target
 
         # store combined hypos
-        self. combined_hypos = {'train':[], 'test':[], 'val':[]}
+        self.combined_hypos = {'train':[], 'test':[], 'val':[]}
 
     def combine(self):
         for data_type in ['train', 'val', 'test']:

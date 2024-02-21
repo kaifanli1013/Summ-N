@@ -1,0 +1,25 @@
+nohup: ignoring input
+Finish loading stage 0 dataset!
+Train size: 97
+Val size: 20
+Test size: 20
+Start target matching of Stage 1. This may take several minutes.
+[nltk_data] Downloading package punkt to
+[nltk_data]     /home/is/kaifan-l/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     /home/is/kaifan-l/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+0it [00:00, ?it/s]637it [00:00, 709822.44it/s]
+0it [00:00, ?it/s]122it [00:00, 623270.51it/s]
+0it [00:00, ?it/s]139it [00:00, 503896.50it/s]
+Finish loading stage 1 dataset!
+Train size: 637
+Val size: 122
+Test size: 139
+Traceback (most recent call last):
+  File "run.py", line 91, in <module>
+    stage_arg.trainer_output_folder = os.path.join(args.checkpoint_dir, f"stage{args.cur_stage}")
+  File "/home/is/kaifan-l/miniconda3/envs/SummN/lib/python3.7/posixpath.py", line 80, in join
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not NoneType

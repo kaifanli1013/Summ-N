@@ -18,5 +18,6 @@ python run.py --cfg AMI.cfg \
  --save-intermediate \
  --cuda-devices 2,3 \
  --model-path $BART_PATH \
- --mode train \
+ --mode test \
+ --checkpoint-dir ./checkpoints \
 
